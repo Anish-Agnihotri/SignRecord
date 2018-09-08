@@ -167,19 +167,24 @@ getJSON('https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey
 })
 */
 const url = 'https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=T2IH6VJHTEYT3VCZKE495BETGNQZC5235Zn';
-const getBlock = async url => {
-  try {
-    const response = await axios.get(url);
-    const data = response.data;
-    parsedValue = parseInt(data.result, 16);
-    app.locals.blockInfo=(parsedValue);
-  } catch (error) {
-    console.log(error);
+function runGetBlock (){
+  const page = '/statusof';
+  const getBlock = async url => {
+    try {
+      const response = await axios.get(url);
+      const data = response.data;
+      parsedValue = parseInt(data.result, 16);
+      app.locals.blockInfo=(parsedValue);
+    } catch (error) {
+      console.log(error);
+    }
   }
+  getBlock(url);
 };
-getBlock(url);
+setInterval( runGetBlock, 5000 );
 
 const url2 = 'https://api.etherscan.io/api?module=proxy&action=eth_gasPrice&apikey=2IH6VJHTEYT3VCZKE495BETGNQZC5235Zn';
+function runGasPrice (){
 const getGasPrice = async url => {
   try {
     const response = await axios.get(url2);
@@ -189,12 +194,19 @@ const getGasPrice = async url => {
   } catch (error) {
     console.log(error);
   }
+}
+  getGasPrice(url);
 };
-getGasPrice(url);
+setInterval( runGasPrice, 5000 );
 
+function getMemory (){
 const used = process.memoryUsage().heapUsed / 1024 / 1024;
 roundedUsed = Math.round(used * 100)/100;
 app.locals.memoryUsed=(roundedUsed);
+};
+setInterval( getMemory, 1000 );
+
+
 /**
  * Start Express server.
  */

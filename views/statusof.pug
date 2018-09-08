@@ -1,0 +1,71 @@
+extends layout
+
+block content
+    .centered
+        .statusHeader 
+            h1 Live-time Application Status
+            p See the behind-the-scenes status of our blockchain sync, current API status, procedural network traffic, and more. Note, data is updated in async intervals and is reliable to the nearest minute. If you are having an issue, please contact support directly.
+        .blockchainStatus
+            h3 Ethereum Blockchain
+            .visualGraph
+                p Current block
+                .leftGraph
+                    h5 Blockchain is currently at block 
+                        span.highlight #{blockInfo}
+                        |.
+                .rightData
+                    li
+            .visualGraph
+                p Network load
+                .leftGraph
+                    h5 Current network transaction price is 
+                        span.highlightYellow #{blockGas}
+                        |  gwei.
+                .rightData
+                    li#mild
+        .apiStatus
+            h3 Docusign API
+            .visualGraph
+                p Response status
+                .leftGraph
+                    h5 API is currently 
+                        span.highlight operational
+                        |.
+                .rightData
+                    li
+            .visualGraph
+                p REST eSigning status
+                .leftGraph
+                    h5 REST response is being 
+                        span.highlight recieved
+                        |.
+                .rightData
+                    li
+        .databaseStatus
+            h3 User Authentication
+            .visualGraph
+                p Login/Signup request status
+                .leftGraph
+                    h5 Login/Signup operations are 
+                        span.highlight functional
+                        |.
+                .rightData
+                    li
+        .domainStatus
+            h3 Document Storage
+            .visualGraph
+                p DocuID association status
+                .leftGraph
+                    h5 DocuID association request status is 
+                        span.highlight active
+                        |.
+                .rightData
+                    li
+            .visualGraph
+                p Load balancer status
+                .leftGraph
+                    h5 Server memory usage is currently 
+                        span.highlightRed #{memoryUsed}
+                        |  MB.
+                .rightData
+                    li#severe

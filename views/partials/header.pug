@@ -1,39 +1,40 @@
 .navbar.navbar-light.fixed-top.navbar-expand-md
   .container
     a.navbar-brand(href='/')
-      i.fas.fa-cube
-      | Project name
+      img(src="https://i.imgur.com/UibGYHd.png")
     button.navbar-toggler(type='button', data-toggle='collapse', data-target='.navbar-collapse')
       span.sr-only Toggle navigation
       span.navbar-toggler-icon
     .collapse.navbar-collapse
-      ul.nav.navbar-nav
-        li.nav-item(class=(title === 'Home') ? 'active' : undefined)
-          a.nav-link(href='/') Home
-        li.nav-item(class=(title === 'API Examples') ? 'active' : undefined)
-          a.nav-link(href='/api') API Examples
-        li.nav-item(class=(title === 'Contact') ? 'active' : undefined)
-          a.nav-link(href='/contact') Contact
+      ul.nav.navbar-nav#pushOver
+        li.nav-item(class=(title === 'Dashboard') ? 'active' : undefined)
+          if user 
+            a.nav-link(href='/dashboard') Dashboard
+        li.nav-item(class=(title === 'Verify') ? 'active' : undefined)
+          if user 
+            a.nav-link(href='/verify') Verify
+        li.nav-item(class=(title === 'Expolorer') ? 'active' : undefined)
+          a.nav-link(href='/explorer') Explorer
         li.nav-item(class=(title === 'Status') ? 'active' : undefined)
-          a.nav-link(href='/status') Status
+          a.nav-link(href='/statusof') Status
+        li.nav-item(class=(title === 'Documentation') ? 'active' : undefined)
+          a.nav-link(href='/documentation') Documentation
       ul.nav.navbar-nav.ml-auto
         if !user
           li.nav-item(class=(title === 'Login') ? 'active' : undefined)
-            a.nav-link(href='/login') Login
+            a.nav-link#signInButton(href='/login') Sign In
           li.nav-item(class=(title === 'Create Account') ? 'active' : undefined)
-            a.nav-link(href='/signup') Create Account
+            a.nav-link#signUpButton(href='/signup') Sign Up
         else
           li.dropdown(class=(title === 'Account Management') ? 'active' : undefined).nav-item
             a.dropdown-toggle.nav-link(href='#', data-toggle='dropdown')
               if user.profile.picture
                 img(src=user.profile.picture)
-              else
+              else 
                 img(src=user.gravatar(60))
               span= user.profile.name || user.email || user.id
-              i.caret
             ul.dropdown-menu
               li.dropdown-item
                 a(href='/account') My Account
-              li.divider.dropdown-item
               li.dropdown-item
-                a(href='/logout') Logout
+                a(href='/logout' style="color: #ff3b30 !important;") Logout

@@ -1,6 +1,7 @@
 // Brand Colors
 // -------------------------
 
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
 $brand-primary: #4d90fc;
 $brand-success: #60bf60;
 $brand-warning: #ff9800;
@@ -9,8 +10,8 @@ $brand-info: #5bc0dd;
 
 // Typography
 // -------------------------
-$font-family-base: "HelveticaNeue-CondensedBold", "Helvetica Neue", Arial, sans-serif;
-$headings-font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", Arial, sans-serif;
+$font-family-base: 'Inconsolata', "HelveticaNeue-CondensedBold", "Helvetica Neue", Arial, sans-serif;
+$headings-font-family: 'Inconsolata', "HelveticaNeue-CondensedBold", "Helvetica Neue", Arial, sans-serif;
 
 // Buttons
 // -------------------------

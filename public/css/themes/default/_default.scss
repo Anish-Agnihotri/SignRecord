@@ -396,3 +396,146 @@ display: none;
 .highlightRed {
   color: #ff3b30;
 }
+.signInBubble {
+  width: 800px;
+  height: 500px;
+  background-color: #404040;
+  border-radius: 5px;
+  margin-left: 12%;
+  margin-top: 3%;
+}
+.leftForm {
+  width: 400px;
+  height: 100%;
+  float: left;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #4d4d4d;
+  color: #ffffff !important;
+  padding-left: 35px;
+  padding-right: 10px;
+  padding-top: 50px;
+}
+.form-control {
+  width: 365px !important;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #595959;
+  padding-left: 10px;
+  border: none;
+  color: #fff;
+}
+.forgotPass {
+  color: #0bd691 !important;
+  margin-left: 42%;
+}
+#submitButton {
+  width: 365px !important;
+  margin-left: -15px;
+  border: 2px solid #0bd691;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #404040;
+  color: #0bd691;
+  border-right: none;
+}
+#submitButton:hover {
+  background-color: #0bd691;
+  color: #404040;
+}
+#submitButtonSignUp {
+  width: 365px !important;
+  margin-left: -97px;
+  border: 2px solid #0bd691;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: #404040;
+  color: #0bd691;
+  border-right: none;
+}
+#submitButtonSignUp:hover {
+  background-color: #0bd691;
+  color: #404040;
+}
+.form-control:focus {
+  background-color: #737373; 
+
+}
+.leftForm > h2 {
+  font-family: 'Helvetica';
+}
+.leftForm > p {
+  font-family: 'Helvetica';
+  color: #aaa;
+}
+.rightForm {
+  width: 400px;
+  height: 100%;
+  background-image: url("https://i.imgur.com/2GsgOVL.jpg");
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  float: left;
+  background-color: #ccc;
+  background-size: cover;
+  background-color: rgba(11,214,145,0.6); // Tint color
+  background-blend-mode: multiply;
+}
+.colormewhite {
+  color: #ffffff !important;
+}
+#actualGraph {
+  height: 280px;
+}
+.ct-label {
+  color: #ffffff !important;
+}
+.ct-series-a .ct-line,
+.ct-series-a .ct-point {
+  stroke: #0bd691 !important;
+}
+
+.ct-series-a .ct-area {
+  fill: #0bd691 !important;
+}
+
+.ct-series-b .ct-line,
+.ct-series-b .ct-point {
+  stroke: #09aa74 !important;
+}
+.ct-series-b .ct-area {
+  fill: #09aa74 !important;
+}
+.leftContent {
+  width: 45%;
+  height: 100%;
+  float: left;
+  font-family: 'Helvetica' !important;
+  margin-top: 20%;
+}
+.leftContent > h1 {
+  font-size: 60px;
+  font-weight: 900;
+  color: #0bd691;
+  line-height: 55px;
+}
+.leftContent > p {
+  color: #aaa;
+  font-size: 18px;
+}
+.rightContent {
+  width: 55%;
+  height: 100%;
+  float: left;
+}
+.rightContent > img {
+  width: 87%;
+  margin-top: 15%;
+  margin-left: 5%;
+}
+.custombutton2 {
+  text-decoration: none;
+  transform: translateX(10%);
+}
+.custombutton2:hover {
+  text-decoration: none !important;
+}

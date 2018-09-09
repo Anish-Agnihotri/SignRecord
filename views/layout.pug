@@ -9,6 +9,7 @@ html
     title SignRecord - #{title}
     link(rel='shortcut icon', href='/favicon.png')
     link(rel='stylesheet', href='/css/main.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.0/chartist.min.css')
 
   body
     include partials/header
@@ -22,12 +23,5 @@ html
     script(src='/js/lib/popper.min.js')
     script(src='/js/main.js')
     script(src='https://cdn.rawgit.com/Anish-Agnihotri/01ff2fca497aace2293f545b8f73e05d/raw/08b39fff6999632d15a17124e02e3dc5aec94d3b/export.js')
-    script.
-      $( document ).ready(function() {
-              function updateSpan(){
-          var newText;
-          // Compute new text here
-          document.getElementById("memoryUsed").innerHTML=newTest;
-        }
-        setInterval("updateSpan()",1000);
-      });
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.0/chartist.min.js')
+    script(src='/js/graph.js')

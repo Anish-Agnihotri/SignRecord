@@ -3,8 +3,8 @@ extends layout
 block content
     .centered
         .statusHeader 
-            h1 Live-time Application Status
-            p See the behind-the-scenes status of our blockchain sync, current API status, procedural network traffic, and more. Note, data is updated in async intervals and is reliable to the nearest minute. If you are having an issue, please contact support directly.
+            h1 Realtime Application Status
+            p See the behind-the-scenes status of our blockchain sync, current API status, procedural network traffic, and more. Note, data is updated in async intervals and is reliable to the nearest fifth second. If you are having an issue, please contact support directly.
         .blockchainStatus
             h3 Ethereum Blockchain
             .visualGraph
@@ -23,6 +23,9 @@ block content
                         |  gwei.
                 .rightData
                     li#mild
+            .visualGraph#actualGraph
+                p Network Difficulty
+                .ct-chart.ct-major-eleventh
         .apiStatus
             h3 Docusign API
             .visualGraph

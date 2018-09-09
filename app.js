@@ -23,6 +23,7 @@ const axios = require('axios');
 const getJSON = require('get-json');
 const upload = multer({ dest: path.join(__dirname, 'uploads') });
 
+//secret 673d1f2f-1872-4dd7-99a0-094efc34b853
 /**
  * Load environment variables from .env file, where API keys and passwords are configured.
  */
@@ -113,7 +114,7 @@ app.use((req, res, next) => {
     req.session.returnTo = req.originalUrl;
   } else if (req.user
     && (req.path === '/account' || req.path.match(/^\/api/))) {
-    req.session.returnTo = req.originalUrl;
+      req.session.returnTo = req.path == '/dashboard';
   }
   next();
 });
@@ -166,12 +167,11 @@ getJSON('https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey
   app.locals.blockInfo=(parsedValue)
 })
 */
-const url = 'https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=T2IH6VJHTEYT3VCZKE495BETGNQZC5235Zn';
+const url3 = 'https://api.etherscan.io/api?module=proxy&action=eth_blockNumber&apikey=T2IH6VJHTEYT3VCZKE495BETGNQZC5235Zn';
 function runGetBlock (){
-  const page = '/statusof';
   const getBlock = async url => {
     try {
-      const response = await axios.get(url);
+      const response = await axios.get(url3);
       const data = response.data;
       parsedValue = parseInt(data.result, 16);
       app.locals.blockInfo=(parsedValue);
@@ -179,7 +179,7 @@ function runGetBlock (){
       console.log(error);
     }
   }
-  getBlock(url);
+  getBlock(url3);
 };
 setInterval( runGetBlock, 5000 );
 
@@ -195,7 +195,7 @@ const getGasPrice = async url => {
     console.log(error);
   }
 }
-  getGasPrice(url);
+  getGasPrice(url2);
 };
 setInterval( runGasPrice, 5000 );
 

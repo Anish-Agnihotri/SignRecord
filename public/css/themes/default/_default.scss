@@ -539,3 +539,27 @@ display: none;
 .custombutton2:hover {
   text-decoration: none !important;
 }
+iframe {
+  border: none;
+  background-color: #404040;
+  border-radius: 5px;
+}
+.leftFloated {
+  text-align: left;
+  margin-left: 15px;
+}
+.leftFloated > a {
+  color: #0df2a6;
+}
+.leftFloated > div > h3 {
+  color: #ffffff !important;
+  font-family: 'Helvetica';
+  font-size: 20px;
+}
+.leftFloated > div {
+  margin-top: 25px;
+}
+.leftFloated > div > p {
+  color: #aaa !important;
+  font-family: 'Helvetica';
+}

@@ -5,6 +5,40 @@ block content
         .statusHeader
             h1 Documentation
             p The following is the server documentation that can be used for external REST API calls. To integrate the credibility verification methods, simply invoke a GET request to the API with the header in the request.
-            pre
-                code
-                    <a href="">
+            .leftFloated
+                a(href="#ipfsValidation").highlight 1. Implementing IPFS validation. 
+                br
+                a(href="#ipfsSmartContract").highlight 2. Developing IPFS smart contract.
+                br
+                a(href="#docusignAPI").highlight 3. Integrating Docusign API. 
+                br
+                a(href="#docusignBlockchain").highlight 4. Controlling Docusign signature with blockchain validation.
+                br
+                a(href="#forking").highlight 5. Forking repository and setup. 
+                #ipfsValidation
+                    h3 1. Implementing IPFS validation.
+                    p IPFS validation, also known as Interplanetary File System validation, is a method of storing data on the Ethereum blockchain through the usage of an initiated smart contract. With ever-increasing concerns around cryber-security, the importance of document authentication and validation is becoming icreasingly necessary. IPFS allows the usage of smart contracts (rather than messages embeded in block values, due to their ever-increasing gas gwei cost) to embed data across a global file system, distributed through the Ethereum Ledger. 
+                    p Validation is invokved through passing data (in the form of a base64 POST value) through a block. This can be tested using dummy values on various Ethereum testnets. The invocation of a storehash allows a user to not only store their smart contract dynamically, but also trigger Web protocols through the Metamask chrome plugin, in real-time.
+                    img(src='https://i.imgur.com/er2yptV.png') 
+                #ipfsSmartContract
+                    h3 2. Developing IPFS smart contract.
+                    p Behind the IPFS validation is a simple smart contract that validates user input and appends it to the next mined block. By using Solidity v0.4+, we are given the ability to asynchronously upload documents that are encoded and further pushed to the blockchain, effectivley propelling them towards a status of unchanging nature.
+                    img(src='https://i.imgur.com/CW7AUpw.png')
+                #docusignAPI
+                    h3 3. Integrating Docusign API. 
+                    p Integrating the Docusign API to the platform is as simple as using your preferred package manager (NPM or Yarn) to import the conventient NodeJS REST API wrapper that is provided directly by Docusign. If using the  
+                        a(href='#forking').highlight forkable 
+                        | version of our platform, there is no need to run the install function at all. In that case, simply add the new packages with the convenient usage of 'yarn add' or 'npm install'.
+                    img(src='https://i.imgur.com/SCJFIrB.png')
+                #docusignBlockchain
+                    h3 4. Controlling docusign signature with blockchain validation.
+                    p Controlling the docusign verification over blockchain is as simple as creating a solidity contract that allows you to asynchonously make calls to IPFS (in order to store documents). By validating signatures through the DocuSign api, and then concurrently saving those same documents to the IPFS-backed ledger, an end-user is able to ensure the security of their document, while also verifying the authenticity of their signature.
+                    img(src='https://i.imgur.com/4GZqPhp.png')
+                #forking
+                    h3 5. Forking repository and setup.
+                    p Looking to experiment with the platform on your own? It's simple to get started and run your own production environment based on SignRecord. Powered by Express, MongoDB, and NodeJS there are two environments that have to be activated in order to start the platform. The first is the primary platform that runs on 
+                        span.highlight http://localhost:8080
+                        |, whereas the second is the IPFS asynchronous query that runs on React at 
+                        span.highlight http://localhost:3000
+                        |. Together, these platforms are synced through dynamic iframes that allow for the React DOM to be integrated directly into the PUG environment.
+                    img(src='https://i.imgur.com/UwVZ2f5.png')

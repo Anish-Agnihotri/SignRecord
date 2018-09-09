@@ -1,0 +1,10 @@
+extends layout
+
+block content
+    .centered
+        .statusHeader   
+            h1 IPFS Integration
+            p After installing Metamask, upload a PDF document to verify it's integrity and upload it to the IPFS on the blockchain. If it has been previously been verified through both the Docusign API and the Ethereum blockchain, it will show up as a trusted source. Otherwise, an alert will be shown. Append the IPFS hash to  
+                span.highlight https://gateway.ipfs.io/ipfs/ 
+                | and see your document being stored live on the blockchain. 
+            iframe(src='http://localhost:3000/index.html' width="100%" height="400px")

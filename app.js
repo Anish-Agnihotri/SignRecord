@@ -38,7 +38,7 @@ const dashboardController = require('./controllers/dashboard');
 const documentationController = require('./controllers/documentation');
 const explorerController = require('./controllers/explorer');
 const statusController = require('./controllers/statusof');
-const verifyController = require('./controllers/verify');
+const integrateController = require('./controllers/integrate');
 
 /**
  * API keys and Passport configuration.
@@ -129,7 +129,7 @@ app.use('/webfonts', express.static(path.join(__dirname, 'node_modules/@fortawes
  */
 app.get('/', homeController.index);
 app.get('/dashboard', passportConfig.isAuthenticated, dashboardController.index);
-app.get('/verify', passportConfig.isAuthenticated, verifyController.index);
+app.get('/integrate', passportConfig.isAuthenticated, integrateController.index);
 app.get('/explorer', explorerController.index);
 app.get('/statusof', statusController.index);
 app.get('/documentation', documentationController.index);
